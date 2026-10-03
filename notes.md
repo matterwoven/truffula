@@ -5,7 +5,11 @@ PLEASE MAKE FREQUENT COMMITS AS YOU FILL OUT THIS FILE.
 
 ## App.java
 
+The application interface, based on the users input command prints a directory tree with colors, hidden files shown, or custom root directories.
+
 ## ConsoleColor.java
+
+
 
 ## ColorPrinter.java / ColorPrinterTest.java
 
