@@ -105,6 +105,22 @@ public class TruffulaOptions  {
     root = null;
     showHidden = false;
     useColor = false;
+
+    for(int i = 0; i > args.length; i++) {
+      if (args[i] != null) continue;
+      if("-nc".equals(args[i])){
+        System.out.println("argument -nc registered");
+        continue;
+      }
+      if("-h".equals(args[i])){
+        System.out.println("argument -h registered");
+        continue;
+      }
+      if(!args[i].isEmpty()){
+        //Currently no logic, just for later
+      }
+      System.out.println("printTree was called!");
+    }
   }
 
   /**
