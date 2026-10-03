@@ -9,7 +9,7 @@ The application interface, based on the users input command prints a directory t
 
 ## ConsoleColor.java
 
-
+The central area for providing color names and their assigned ANSI codes under an enum. Functions such as getCode() provide the ANSI escape code associated with the color. Also contains a ConsoleColor constructor.
 
 ## ColorPrinter.java / ColorPrinterTest.java
 
