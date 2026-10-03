@@ -105,29 +105,29 @@ public class TruffulaOptions  {
     boolean defaultUseColor = true;
     boolean defaultShowHidden = false;
 
-    for(int i = 0; i > args.length; i++) {
-      if (args[i] != null) continue;
-      if("-nc".equals(args[i])){
-        System.out.println("argument -nc registered");
-        defaultUseColor = false;
-        continue;
-      }
+    for(int i = 0; i < args.length; i++) {
+      if (args[i] == null) continue;
       if("-h".equals(args[i])){
         System.out.println("argument -h registered");
         defaultShowHidden = true;
         continue;
       }
-      if(!args[i].isEmpty()){
-        File dir = new File(args[i]);
-        if(!dir.isDirectory()){
-          throw new FileNotFoundException("Argument is not a directory");
-        }
-        if(!dir.isFile()){
-          throw new FileNotFoundException("Argument is not a file");
-        }
+      if("-nc".equals(args[i])){
+        System.out.println("argument -nc registered");
+        defaultUseColor = false;
+        continue;
       }
     }
+    int thing = args.length - 1;
+    File dir = new File(args[thing]);
+    if(!dir.isDirectory()){
+      throw new FileNotFoundException("Directory could not be found");
+    }
+    if(dir.isFile()){
+      throw new FileNotFoundException("Argument is a file");
+    }
     System.out.println("printTree was called!");
+    root = dir;
     showHidden = defaultShowHidden;
     useColor = defaultUseColor;
   }
