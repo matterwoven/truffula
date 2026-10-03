@@ -123,9 +123,8 @@ public class TruffulaPrinter {
     //Write name, next line for children
     //Indent per depth level
     //Write name before looking at children
-    out.println("");
-    for(int i = 0; i > depth; i++) System.out.print("   ");
-    out.print(directory.getName());
+    String depthDent = "   ".repeat(depth);
+    out.println(depthDent + directory.getName());
     if(directory.isFile()) return;
     for(File child : directory.listFiles()){ 
       printRecursive(child, depth + 1);
