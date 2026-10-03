@@ -19,8 +19,12 @@ The Test asks whether the color is automatically set to ConsoleColor.RESET outsi
 
 ## TruffulaOptions.java / TruffulaOptionsTest.java
 
+Forms a directory tree based on settings defined in its call by App.java. Acts as the error handler and coordinator for passed in argument handling. Utilized previous two files as the backbone of its color display and printing.
 
+TruffulaOptionsTest.java checks if the directory is set correctly, all in the name of the test. Future tests should check if blank or improper arguments have been handled correctly.
 
 ## TruffulaPrinter.java / TruffulaPrinterTest.java
+
+
 
 ## AlphabeticalFileSorter.java
