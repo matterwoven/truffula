@@ -1,3 +1,4 @@
+import java.io.File;
 import java.io.PrintStream;
 import java.util.List;
 
@@ -114,5 +115,20 @@ public class TruffulaPrinter {
 
     out.println("printTree was called!");
     out.println("My options are: " + options);
+    File location = options.getRoot();
+    printRecursive(location, 0);
+  }
+
+  private void printRecursive(File directory, int depth){
+    //Write name, next line for children
+    //Indent per depth level
+    //Write name before looking at children
+    out.println("");
+    for(int i = 0; i > depth; i++) System.out.print("   ");
+    out.print(directory.getName());
+    if(directory.isFile()) return;
+    for(File child : directory.listFiles()){ 
+      printRecursive(child, depth + 1);
+    }
   }
 }
