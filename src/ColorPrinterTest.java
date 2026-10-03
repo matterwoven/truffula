@@ -34,16 +34,17 @@ class ColorPrinterTest {
     PrintStream printStream = new PrintStream(outputStream);
 
     ColorPrinter printer = new ColorPrinter(printStream);
-    printer.setCurrentColor(ConsoleColor.RED);
+    printer.setCurrentColor(ConsoleColor.WHITE);
 
     // Act: Print the message
     String premessage = "I am the Lorbex";
     String message = "I speak for the trees";
     printer.println(premessage);
+    printer.setCurrentColor(ConsoleColor.BLUE);
     printer.println(message);
 
 
-    String expectedOutput = ConsoleColor.WHITE + "I am the Lorbex" + System.lineSeparator() + ConsoleColor.BLUE + "I speak for the trees" + ConsoleColor.RESET;
+    String expectedOutput = ConsoleColor.WHITE + "I am the Lorbex" + System.lineSeparator() + ConsoleColor.BLUE + "I speak for the trees" + System.lineSeparator() + ConsoleColor.RESET;
 
     // Assert: Verify the printed output
     assertEquals(expectedOutput, outputStream.toString());
