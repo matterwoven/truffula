@@ -15,6 +15,8 @@ The central area for providing color names and their assigned ANSI codes under a
 
 The ColorPrinter class acts as a vector to access special printing privelages, in this case printing with colors internally set based on the enumerator definition. For this enumerator, ConsoleColor.RED is an example of these options, swapping out the final color should change the color of the message accordingly.
 
+printStream is a constant flow of the colors, then the messages being made.
+
 The Test asks whether the color is automatically set to ConsoleColor.RESET outside the variable after the area where the print is finished.
 
 ## TruffulaOptions.java / TruffulaOptionsTest.java
