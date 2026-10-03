@@ -31,3 +31,4 @@ The Test simply checks if a valid directory has been set.
 
 ## AlphabeticalFileSorter.java
 
+Just sorts by alphabet in the sort() section. (File sorting.)
