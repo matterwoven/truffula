@@ -25,6 +25,9 @@ TruffulaOptionsTest.java checks if the directory is set correctly, all in the na
 
 ## TruffulaPrinter.java / TruffulaPrinterTest.java
 
+How the tree is printed, the color order when printing, the output printer for displaying said data, and example display structure are all handled in TruffulaPrinter.java.
 
+The Test simply checks if a valid directory has been set.
 
 ## AlphabeticalFileSorter.java
+
