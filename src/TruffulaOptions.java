@@ -102,25 +102,34 @@ public class TruffulaOptions  {
    */
   public TruffulaOptions(String[] args) throws IllegalArgumentException, FileNotFoundException {
     // TODO: Replace the below lines with your implementation
-    root = null;
-    showHidden = false;
-    useColor = false;
+    boolean defaultUseColor = true;
+    boolean defaultShowHidden = false;
 
     for(int i = 0; i > args.length; i++) {
       if (args[i] != null) continue;
       if("-nc".equals(args[i])){
         System.out.println("argument -nc registered");
+        defaultUseColor = false;
         continue;
       }
       if("-h".equals(args[i])){
         System.out.println("argument -h registered");
+        defaultShowHidden = true;
         continue;
       }
       if(!args[i].isEmpty()){
-        //Currently no logic, just for later
+        File dir = new File(args[i]);
+        if(!dir.isDirectory()){
+          throw new FileNotFoundException("Argument is not a directory");
+        }
+        if(!dir.isFile()){
+          throw new FileNotFoundException("Argument is not a file");
+        }
       }
-      System.out.println("printTree was called!");
     }
+    System.out.println("printTree was called!");
+    showHidden = defaultShowHidden;
+    useColor = defaultUseColor;
   }
 
   /**
