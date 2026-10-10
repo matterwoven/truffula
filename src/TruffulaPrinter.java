@@ -123,11 +123,15 @@ public class TruffulaPrinter {
     //Write name, next line for children
     //Indent per depth level
     //Write name before looking at children
-    String depthDent = "   ".repeat(depth);
     if(directory.isHidden() && !options.isShowHidden()) return;
+    String depthDent = "   ".repeat(depth);
+    ConsoleColor color = ConsoleColor.WHITE;
+    if(options.isUseColor()) color = DEFAULT_COLOR_SEQUENCE.get(depth % 3);
+    out.setCurrentColor(color);
     out.println(depthDent + directory.getName());
     if(directory.isFile()) return;
-    for(File child : directory.listFiles()){ 
+    File[] sorted = AlphabeticalFileSorter.sort(directory.listFiles());
+    for(File child : sorted){ 
       printRecursive(child, depth + 1);
     }
   }
