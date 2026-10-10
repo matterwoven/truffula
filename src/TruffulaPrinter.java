@@ -124,7 +124,7 @@ public class TruffulaPrinter {
     //Indent per depth level
     //Write name before looking at children
     String depthDent = "   ".repeat(depth);
-    //add colors
+    if(directory.isHidden() && !options.isShowHidden()) return;
     out.println(depthDent + directory.getName());
     if(directory.isFile()) return;
     for(File child : directory.listFiles()){ 
