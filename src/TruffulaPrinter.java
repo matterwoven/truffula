@@ -126,7 +126,7 @@ public class TruffulaPrinter {
     if(directory.isHidden() && !options.isShowHidden()) return;
     String depthDent = "   ".repeat(depth);
     ConsoleColor color = ConsoleColor.WHITE;
-    if(options.isUseColor()) color = DEFAULT_COLOR_SEQUENCE.get(depth % 3);
+    if(options.isUseColor()) color = DEFAULT_COLOR_SEQUENCE.get(Math.floorMod(depth - 1, DEFAULT_COLOR_SEQUENCE.size()));
     out.setCurrentColor(color);
     out.println(depthDent + directory.getName());
     if(directory.isFile()) return;
