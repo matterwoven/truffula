@@ -126,7 +126,6 @@ public class TruffulaOptions  {
     if(dir.isFile()){
       throw new FileNotFoundException("Argument is a file");
     }
-    System.out.println("printTree was called!");
     root = dir;
     showHidden = defaultShowHidden;
     useColor = defaultUseColor;
